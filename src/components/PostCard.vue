@@ -28,5 +28,6 @@
 const props = defineProps({
   post: Object,
 });
+// copy the post to avoir unwanted mutation
 const post = { ...props.post };
 </script>
