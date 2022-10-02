@@ -5,11 +5,13 @@
 </template>
 
 <script setup>
-import usePost from "../composables/usePost"
+// import usePost from "../composables/usePost"
 import PostCard from "../components/PostCard.vue"
+import useResource from "../composables/useResource"
 
-const { posts, fetchAll } = usePost()
+// const { posts, fetchAll } = usePost()
 
+const { items: posts, fetchAll } = useResource('posts')
 fetchAll()
 
 </script>
