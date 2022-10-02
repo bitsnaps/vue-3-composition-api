@@ -5,12 +5,19 @@
     <div>{{ post.body }}</div>
   </div>
 </template>
+
 <script setup>
-const post = {
-  title:
-    "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  body: "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
-};
+import { useRouter, useRoute } from 'vue-router'
+import usePost from '../composables/usePost'
+
+const route = useRoute()
+const { post, fetchOne } = usePost()
+
+// This is not possible using the setup() use the useRoute composable
+// fetchOne(this.$route.params.id)
+
+fetchOne(route.params.id)
+
 const user = {
   name: "Leanne Graham",
 };

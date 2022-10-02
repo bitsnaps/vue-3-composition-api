@@ -1,12 +1,13 @@
 // tailwind.config.js
 module.exports = {
-  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  darkMode: 'media', // or 'class'
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
+  // no longer needed with v3 (https://tailwindcss.com/docs/upgrade-guide#configure-content-sources)
+  // variants: {
+  //   extend: {},
+  // },
   plugins: [],
 };
